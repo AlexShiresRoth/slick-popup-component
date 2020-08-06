@@ -1,0 +1,32 @@
+.spinner_container {
+  height: 7rem;
+  width: 7rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:2rem 0;
+  & .spinner {
+    height: 8rem;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--brand-main);
+    border-bottom: 2px solid var(--brand-main);
+    animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    border-radius: 50%;
+    position: absolute;
+  }
+  & img {
+    position: absolute;
+    max-width: 100%;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
