@@ -5,7 +5,6 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: url("./imgs/bg-slick.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -28,12 +27,12 @@
     }
   }
   & button {
-    color: #fff;
-    background: var(--brand-main);
+    color: var(--brand-main);
+    text-transform: uppercase;
+    background: #111;
     border: 0;
     width: 20rem;
     height: 3.5rem;
-    border-radius: 150px;
     font-size: 1rem;
     filter: drop-shadow(0 1px 10px var(--brand-main));
     transition: all 0.3s ease;
@@ -130,7 +129,6 @@
         & input {
           background: #eee;
           color: #fff;
-          border-radius: 5px;
           border: 0;
           min-height: 3.5rem;
           font-size: 16px;

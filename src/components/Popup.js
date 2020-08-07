@@ -25,6 +25,7 @@ export const Popup = () => {
           setVisibility={setVisibility}
           visible={visible}
           loading={loading}
+          setLoading={setLoading}
         />
       ) : null}
     </section>
