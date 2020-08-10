@@ -12,6 +12,8 @@ export const inventoryArray = [
         THIS OFFER $24`,
     img: "milf.png",
     bestSeller: true,
+    imgs: ["framewave-left.png", "framewave-right.png"],
+    tab: 'best-seller-pink.png'
   },
   {
     name: "whisper",
@@ -24,6 +26,8 @@ export const inventoryArray = [
         THIS OFFER $24`,
     img: "whisper.png",
     bestSeller: true,
+    imgs: ["frame-wave-blk-left.png", "frame-wave-blk-right.png"],
+    tab:'best-seller-blk.png'
   },
   {
     name: "coy",
@@ -36,6 +40,8 @@ export const inventoryArray = [
         THIS OFFER $24`,
     img: "coy.png",
     bestSeller: false,
+    imgs: [],
+    tab:''
   },
   {
     name: "high maintenance",
@@ -48,6 +54,8 @@ export const inventoryArray = [
         THIS OFFER $24`,
     img: "highmaintenance.png",
     bestSeller: false,
+    imgs: [],
+    tab:''
   },
   {
     name: "electric",
@@ -59,12 +67,14 @@ export const inventoryArray = [
         THIS OFFER $24`,
     img: "electric.png",
     bestSeller: false,
+    imgs: [],
+    tab:''
   },
   {
     name: "housewife",
     type: "lash set",
     text: `Our Housewife set will have you 
-    married to galmour in seconds, 
+    married to glamour in seconds, 
     made with all natural materials 
     that'll have him calling 
     your wifey on the daily.`,
@@ -72,18 +82,23 @@ export const inventoryArray = [
         THIS OFFER $24`,
     img: "housewife.png",
     bestSeller: false,
+    imgs: [],
+    tab:''
   },
   {
     name: "bombshell brow pen",
     type: "special",
-    text: `Our Housewife set will have you 
-    married to galmour in seconds, 
-    made with all natural materials 
-    that'll have him calling 
-    your wifey on the daily.`,
+    text: `This Microblading Pen is super 
+    easy to use and all you need to get 
+    beautiful brows at home. Give 
+    your brows the ultimate makeover 
+    and compliment all your 
+    makeup looks.`,
     offer: `IN STORE: $30 \n 
     THIS OFFER $14`,
     img: "pen.png",
     bestSeller: false,
+    imgs: [],
+    tab:''
   },
 ];

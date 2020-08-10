@@ -1,11 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import style from "./Inventory.module.scss";
 import { inventoryArray } from "./inventoryArray";
+import { AiOutlineCloseCircle, AiOutlineArrowRight } from "react-icons/ai";
+import InventoryColumn from "./InventoryColumn";
+import InventoryDoubleColumn from "./InventoryDoubleColumn";
 
-const Inventory = (props) => {
+const Inventory = ({ visible, setVisibility }) => {
   return (
     <div className={style.inventory_container}>
+      <div className={style.close_icon}>
+        <AiOutlineCloseCircle onClick={() => setVisibility(!visible)} />
+      </div>
       <div className={style.container_inner}>
         <div className={style.heading}>
           <img src={require(`./imgs/logo.png`)} alt="logo" />
@@ -20,53 +25,20 @@ const Inventory = (props) => {
         <div className={style.lash_grid}>
           {inventoryArray.map((item, i) => {
             return item.type === "lash set" ? (
-              <div className={style.column}>
-                <div className={style.heading}>
-                  <h3>{item.name}</h3>
-                  <h5>{item.type}</h5>
-                </div>
-                <div className={style.img_container}>
-                  <img src={require(`./imgs/${item.img}`)} alt={item.name} />
-                </div>
-                <div className={style.offer}>
-                  <p>{item.offer}</p>
-                </div>
-                <div className={style.text_container}>
-                  <p>{item.text}</p>
-                </div>
-                <button>Add To Bag</button>
-              </div>
+              <InventoryColumn item={item} i={i} key={i} />
             ) : (
-              <div className={style.two_col}>
-                <div className={style.col}>
-                  <div className={style.img_container}>
-                    <div className={style.bg_block}></div>
-                    <img src={require(`./imgs/${item.img}`)} alt={item.name} />
-                  </div>
-                </div>
-                <div className={style.col}>
-                  <div className={style.heading}>
-                    <h3>{item.name}</h3>
-                    <h5>{item.type}</h5>
-                  </div>
-                  <div className={style.offer}>
-                    <p>{item.offer}</p>
-                  </div>
-                  <div className={style.text_container}>
-                    <p>{item.text}</p>
-                  </div>
-                  <button>Add To Bag</button>
-                </div>
-              </div>
+              <InventoryDoubleColumn item={item} i={i} key={i} />
             );
           })}
         </div>
-        <button>Continue</button>
+        <div className={style.btn_container}>
+          <button>
+            Continue <AiOutlineArrowRight />
+          </button>
+        </div>
       </div>
     </div>
   );
 };
-
-Inventory.propTypes = {};
 
 export default Inventory;

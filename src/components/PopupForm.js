@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineArrowRight } from "react-icons/ai";
 import LoadingSpinner from "./LoadingSpinner";
 import Inventory from "./Inventory";
 
@@ -46,7 +46,7 @@ const PopupForm = ({ style, setVisibility, visible, loading, setLoading }) => {
     //handle getting user account info here
     if (name !== "" && email !== "") {
       setLoading(true);
-      changeText("Saving your account info");
+      changeText("Saving your account info...");
       //add user info to local storage
       window.localStorage.setItem("name", name);
       window.localStorage.setItem("email", email);
@@ -72,11 +72,11 @@ const PopupForm = ({ style, setVisibility, visible, loading, setLoading }) => {
             <AiOutlineCloseCircle onClick={() => setVisibility(!visible)} />
           </div>
           <div className={style.heading}>
-            <img src={require(`./imgs/logo.png`)} />
+            <img src={require(`./imgs/logo.png`)} alt="slick logo"/>
             <h2>
-              <img src={require(`./imgs/fireworks.png`)} />
+              <img src={require(`./imgs/fireworks.png`)} alt="fireworks" />
               CONGRATULATIONS
-              <img src={require(`./imgs/fireworks.png`)} />
+              <img src={require(`./imgs/fireworks.png`)} alt="fireworks" />
             </h2>
             <h3>We have reserved a Slick Lash Kit for you.</h3>
             <span></span>
@@ -105,17 +105,21 @@ const PopupForm = ({ style, setVisibility, visible, loading, setLoading }) => {
             />
           </div>
           <div className={style.input_col}>
-            <button onSubmit={(e) => handleSubmit(e)}>Continue</button>
+            <button onSubmit={(e) => handleSubmit(e)}>
+              continue
+              <AiOutlineArrowRight />
+            </button>
           </div>
         </div>
       </form>
     ) : (
-      <Inventory />
+      <Inventory setVisibility={setVisibility} visible={visible} />
     )
   ) : (
     <div className={style.loading_container}>
       <p>{text}</p>
       <LoadingSpinner />
+      <img src={require(`./imgs/secure.png`)} alt="secure" />
     </div>
   );
 };
